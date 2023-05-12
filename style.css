@@ -22,14 +22,14 @@ body{
     justify-content: center;
     align-items: center;
     min-width: 370px;
-    max-height: 500px;
+    max-height: 1000px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
 }
 
 .about-page{
     min-width: 350px;
-    max-height: 480px;
+    max-height: 1000px;
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
@@ -122,13 +122,85 @@ body{
     gap: 15px;
 }
 
-.facebook{
-    height: 30px;
-    width: 30px;
+.facebook,
+.twitter,
+.pinterest{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
-    background-color: antiquewhite;
+    background-color: #f7f9fc;
+    margin-bottom: 100px;
+    cursor: pointer;
 }
 
-.img{
+.facebook::before{
+    content: ' ';
+    position: absolute;
+    background-image: url(./facebook_icon-icons.com_59205.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+}
 
+.twitter::before{
+    content: ' ';
+    position: absolute;
+    background-image: url(./TWITTER_icon-icons.com_65536.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+}
+
+.pinterest::before{
+    content: ' ';
+    position: absolute;
+    background-image: url(./PINTEREST_icon-icons.com_65539.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+}
+
+.facebook:hover::before,
+.twitter:hover::before,
+.pinterest:hover::before{
+    filter: grayscale(200%) brightness(90%);
+}
+
+.switch{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.switch-about{
+    margin: 0 auto;
+}
+
+.switch-about:hover{
+    box-shadow: inset 10px 10px 10px purple;
+    cursor: pointer;
+}
+
+.switch-experience{
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.switch-contact{
+    margin: 0 auto;
+    cursor: pointer;
 }
