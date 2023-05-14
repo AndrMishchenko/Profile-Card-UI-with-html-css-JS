@@ -1,47 +1,88 @@
-const contact = document.querySelector('.switch-contact')
-contact.addEventListener('click', showContactMenu);
+/*Получаю весь блок в котором находится инфа*/
+const mainPage = document.querySelector('.about-page')
 
-const aboutPage = document.querySelector('.about-page');
+/*получаю блок в котором находятся кнопки для перехода на разные странички*/
+const switchBtn = document.querySelector('.switch')
 
-const aboutGeneralInformation = document.querySelector('.about-general-information');
-const switchButton = document.querySelector('.switch');
+/*получаю страницу about на которой вся инфа*/
+const viewPageAbout = document.querySelector('.about-general-information');
 
-function showContactMenu(){
-    if(aboutGeneralInformation){
-        aboutPage.removeChild(aboutGeneralInformation);
+/*получаю кнопку about*/
+const btnAbout = document.querySelector('.switch-about');
+btnAbout.addEventListener('click', clickBtnAbout);
 
-        const contactMenu = document.createElement('div');
-        contactMenu.classList.add('contact-menu');
-        contactMenu.textContent = 'sdfsdfs'
-        aboutPage.insertBefore(contactMenu, switchButton);
+/* получаю кнопку Experience*/
+const btnExperience = document.querySelector('.switch-experience');
+btnExperience.addEventListener('click', clickBtnExperience);
+
+/* получаю кнопку Contact*/
+const btnContact = document.querySelector('.switch-contact')
+btnContact.addEventListener('click', clickBtnContact)
+
+function clickBtnAbout(){
+    const experienceBlock = document.querySelector('.page-experience') 
+    const contactBlock = document.querySelector('.page-contact')
+    mainPage.insertBefore(viewPageAbout, switchBtn);
+    
+    if(experienceBlock){
+        mainPage.removeChild(experienceBlock)
+    }if(contactBlock){
+        mainPage.removeChild(contactBlock)
+    }
+    }
+
+function clickBtnExperience(){
+    const contactBlock = document.querySelector('.page-contact')
+
+    const pageExperince = document.createElement('div');
+    pageExperince.classList.add('page-experience');
+    pageExperince.textContent = 'sfsdf'
+   
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('new-div');
+    newDiv.textContent = 'new div'
+    pageExperince.appendChild(newDiv)
+    
+    if(contactBlock){
+        mainPage.removeChild(contactBlock)
+    }
+        
+    mainPage.insertBefore(pageExperince, switchBtn);
+    
+       
+    if(viewPageAbout){
+        mainPage.removeChild(viewPageAbout)
     }
 }
 
-const about = document.querySelector('.switch-about');
-about.addEventListener('click', showAbout)
 
-function showAbout(){
-    const getContactMenu = document.querySelector('.contact-menu');
-    const getExperienceMenu = document.querySelector('.experience-menu');
-    if(getContactMenu){
-        aboutPage.removeChild(getContactMenu)
-        aboutPage.insertBefore(aboutGeneralInformation, switchButton)
-    }if(getExperienceMenu){
-        aboutPage.removeChild(getExperienceMenu)
-        aboutPage.insertBefore(aboutGeneralInformation, switchButton)
-    }
-}
+function clickBtnContact(){
+    const pageContact = document.createElement('div');
+    const experienceBlock = document.querySelector('.page-experience');    
+    pageContact.classList.add('page-contact');
+    mainPage.insertBefore(pageContact, switchBtn);
 
-const experience = document.querySelector('.switch-experience');
-experience.addEventListener('click', showExperienceMenu);
+    const contactTitle = document.createElement('div');
+    contactTitle.classList.add('title-cotact-inform');
+    contactTitle.textContent = 'Contact'
 
-function showExperienceMenu(){
-    if(aboutGeneralInformation){
-        aboutPage.removeChild(aboutGeneralInformation)
+    const contactLocation = document.createElement('div');
+    contactLocation.classList.add('location-contact-info');
+    
+    const contactLocationIMG = document.createElement('div');
+    contactLocationIMG.classList.add('contact-location-img');
 
-        const experienceMenu = document.createElement('div');
-        experienceMenu.classList.add('experience-menu');
-        experienceMenu.textContent = 'dfsdfertrf'
-        aboutPage.insertBefore(experienceMenu, switchButton)
+    const contactLocationBorder = document.createElement('div');
+    contactLocationBorder.classList.add('border');
+
+    pageContact.appendChild(contactTitle)
+    pageContact.appendChild(contactLocation)
+    contactLocation.appendChild(contactLocationIMG)
+    contactLocation.appendChild(contactLocationBorder)
+
+    if(experienceBlock){
+        mainPage.removeChild(experienceBlock)
+    }if(viewPageAbout){
+        mainPage.removeChild(viewPageAbout)
     }
 }
