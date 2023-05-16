@@ -85,7 +85,7 @@ body{
 
 .about-general-information{
     margin: 0 auto;
-    min-height: 200px;
+    height: 170px;
     width: 300px;
 }
 
@@ -102,7 +102,7 @@ body{
     font-size: 12px;
     font-weight: 700;
     color: #67697d;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .title-about-inform{
@@ -176,34 +176,253 @@ body{
 }
 
 .switch{
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 2.5fr 1fr;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    width: 300px;
+    width: 350px;
     height: 50px;
     margin: 0 auto;
 }
 
 .switch-about{
-    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 116px;
+    height: 50px;
+    text-align: center;
+    box-shadow: inset -10px -10px 30px rgb(138, 132, 255);
+    
 }
 
-.switch-about:hover{
-    box-shadow: inset 10px 10px 10px purple;
+.switch-about::before{
+    content: '';
+    position: absolute;
+    border: 2px solid rgb(138, 132, 255);
+    width: 112px;
+    top: 47px;  
+}
+
+.switch-about-nonActive{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    width: 116px;
+    height: 50px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.switch-about-nonActive:hover::before{
+    content: '';
+    position: absolute;
+    border: 2px solid #8a84ff;
+    width: 112px;
+    top: 47px;
+}
+
+.switch-about-nonActive:hover{
+    box-shadow: inset -10px -10px 30px rgb(138, 132, 255);
 }
 
 .switch-experience{
-    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    width: 33.3%;
+    height: 50px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.switch-experience:hover::before{
+    content: '';
+    position: absolute;
+    border: 2px solid #8a84ff;
+    width: 113px;
+    top: 47px;
+}
+
+.switch-experience:hover{
+    background-color: rgba(138, 132, 255, 0.8);
+}
+
+.switch-experience-click{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 33.3%;
+    height: 50px;
+    text-align: center;
+    background-color: rgba(138, 132, 255, 0.8);
+}
+
+.switch-experience-click::before{
+    content: '';
+    position: absolute;
+    border: 2px solid #8a84ff;
+    width: 113px;
+    top: 47px;
 }
 
 .switch-contact{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 33.3%;
+    height: 50px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.switch-contact:hover::before{
+    content: '';
+    position: absolute;
+    border: 2px solid #8a84ff;
+    width: 112px;
+    top: 47px;
+}
+
+.switch-contact:hover{
+    box-shadow: inset 10px -10px 30px rgb(138, 132, 255);
+}
+
+.switch-contact-click{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 33.3%;
+    height: 50px;
+    text-align: center;
+    
+    box-shadow: inset 10px -10px 30px rgb(138, 132, 255);
+}
+
+.switch-contact-click::before{
+    position: absolute;
+    content: '';
+    border: 2px solid #8a84ff;
+    height: 0px;
+    width: 112px;
+    top: 47px;
+}
+
+/*Page Experience*/
+.page-experience{
     margin: 0 auto;
+    min-height: 200px;
+    width: 300px;
+}
+
+
+
+/*Page Contact*/
+
+.page-contact{
+    margin: 0 auto;
+    min-height: 200px;
+    width: 300px;
+}
+
+.title-cotact-inform{
+    color: #2b2c48;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.location-contact-info,
+.conatact-phone,
+.contact-email{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
     cursor: pointer;
 }
 
-.{
+.contact-location-img{
+    background-image: url(./images/free-icon-gps-4120429.png);
+    filter: brightness(50);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
 }
+
+.border,
+.border-phone,
+.border-email
+{
+    height: 35px;
+    width: 2px;
+    border: 1px solid #dfe2ec;
+}
+
+.contact-location-adress,
+.contact-phone-number,
+.contact-email-mail{
+    color: #6f6f7b;
+    font-size: 14px;
+}
+
+.contact-phone-img{
+    background-image: url(./images/phone-call.png);
+    filter: brightness(50);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    padding-left: 27px;
+}
+
+.contact-email-img{
+    background-image: url(./images/mail.png);
+    filter: brightness(50);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    padding-left: 27px;
+}
+
+.contact-button-block{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.contact-button{
+    height: 45px;
+    width: 300px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(
+    to right,
+    rgba(83, 250, 239, 0.8) 0%,
+    rgba(81, 106, 204, 0.8) 96%
+    );
+    cursor: pointer;
+}
+
